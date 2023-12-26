@@ -23,4 +23,10 @@ public class UserRegistrationTest {
         System.out.println(check);
         Assert.assertTrue(check);
     }
+    @Test
+    public void phone(){
+        boolean check=user.phoneNumber();
+        System.out.println(check);
+        Assert.assertTrue(check);
+    }
 }
