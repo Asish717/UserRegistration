@@ -7,13 +7,19 @@ public class UserRegistrationTest {
     UserRegistration user=new UserRegistration();
     @Test
     public void nameFirst(){
-        boolean check=user.userFirstName("Asish");
+        boolean check=user.userFirstName();
         System.out.println(check);
         Assert.assertTrue(check);
     }
     @Test
     public void nameLast(){
-        boolean check=user.userLastName("Dash");
+        boolean check=user.userLastName();
+        System.out.println(check);
+        Assert.assertTrue(check);
+    }
+    @Test
+    public void userEmail(){
+        boolean check=user.email();
         System.out.println(check);
         Assert.assertTrue(check);
     }
