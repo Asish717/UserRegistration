@@ -11,4 +11,10 @@ public class UserRegistrationTest {
         System.out.println(check);
         Assert.assertTrue(check);
     }
+    @Test
+    public void nameLast(){
+        boolean check=user.userLastName("Dash");
+        System.out.println(check);
+        Assert.assertTrue(check);
+    }
 }
