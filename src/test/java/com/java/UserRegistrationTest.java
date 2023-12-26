@@ -29,4 +29,10 @@ public class UserRegistrationTest {
         System.out.println(check);
         Assert.assertTrue(check);
     }
+    @Test
+    public void password(){
+        boolean check=user.userPassword();
+        System.out.println(check);
+        Assert.assertTrue(check);
+    }
 }
