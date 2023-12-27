@@ -22,6 +22,6 @@ public class UserRegistration {
                 .matcher("91 8297760717").matches();
     }
     public boolean userPassword(){
-        return Pattern.compile("(?=.*[A-Z])(?=.*[0-9]).{8,}").matcher("kumar1Dash").matches();
+        return Pattern.compile("(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}").matcher("kumar1Dash#").matches();
     }
 }
