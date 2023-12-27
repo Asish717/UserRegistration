@@ -24,4 +24,11 @@ public class UserRegistration {
     public boolean userPassword(){
         return Pattern.compile("(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}").matcher("kumar1Dash#").matches();
     }
+    public boolean emailSample(String email){
+        boolean isValidEmail=email.matches("[a-zA-Z0-9._&*+-]+@[a-z0-9.]{1,}\\.[a-z]{2,}");
+            if (isValidEmail==false){
+                System.out.println("not valid");
+            }
+            return isValidEmail;
+    }
 }
