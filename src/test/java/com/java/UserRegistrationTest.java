@@ -48,7 +48,7 @@ public class UserRegistrationTest {
     @Test
     public void password(){
         try {
-            boolean check=user.userPassword();
+            boolean check=user.userPassword("kumar1Dash#");
             System.out.println(check);
             Assert.assertTrue(check);
         }

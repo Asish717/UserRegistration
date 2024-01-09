@@ -41,13 +41,22 @@ public class UserRegistration {
             throw new InvalidUserException("Invalid phone number");
         }
     }
-    public boolean userPassword() throws InvalidUserException{
-        if (Pattern.compile("(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}").matcher("kumar1Dash#").matches()){
-            return true;
+    public boolean userPassword(String pass) throws InvalidUserException{
+        if (pass.length() < 8) {
+            throw new InvalidUserException("Invalid Password: Password should be at least 8 characters long");
         }
-        else {
-            throw new InvalidUserException("Invalid password");
+
+        // Count the number of uppercase letters, numbers, and special characters
+        long uppercaseCount = pass.chars().filter(Character::isUpperCase).count();
+        long digitCount = pass.chars().filter(Character::isDigit).count();
+        long specialCharCount = pass.chars().filter(ch -> "[!@#$%&*()_+]".indexOf(ch) != -1).count();
+
+        // Ensure there is at least one uppercase letter, at least one number, and exactly one special character
+        if (uppercaseCount < 1 || digitCount < 1 || specialCharCount != 1) {
+            throw new InvalidUserException("Invalid Password: Password should be at least 8 characters long, contain at least one uppercase letter, at least one number, and exactly one special character");
         }
+
+        return true;
     }
     public boolean emailSample(String email){
         boolean isValidEmail=email.matches("[a-zA-Z0-9._&*+-]+@[a-z0-9.]{1,}\\.[a-z]{2,}");
